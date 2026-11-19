@@ -111,7 +111,7 @@ textarea::placeholder{color:var(--muted)}
 /* ====== À PERSONNALISER ====== */
 var CONFIG = {
   name: "My Mikasa 🙌",
-  school: "HEC Tchad · BAF · L1",
+  school: "ENASTIC · Informatique · L3",
   whatsapp: "23566289061",
   secret: "Tu es la seule personne avec qui j'ai envie de jouer comme ça.",   // message sous la carte à gratter
   photoCaption: "Voilà celui qui pense à toi plus qu'il ne devrait 😏",   // phrase sous ta photo
@@ -137,11 +137,11 @@ function rec(label, val){ answers.push([label, val]); }
 
 /* ---------- Questions à choix ---------- */
 var Q_CHOICE = {
-  filiere: { ch:"L'amphi", q:"Banque, Assurance ou Finance : ton domaine préféré ?", label:"Domaine BAF", opts:[
-    ["Banque 🏦","Les billets, ça te connaît."],["Assurance 🛡️","Tu protèges tout le monde. Même les cœurs ?"],["Finance 📈","Ambitieuse. J'aime."],["Surtout le diplôme 🎓","Franche. Respect."]] },
-  place: { ch:"L'amphi", q:"Ta place en amphi ?", label:"Place en amphi", opts:[
+  filiere: { ch:"La salle", q:"En informatique, ton domaine préféré ?", label:"Domaine info", opts:[
+    ["Développement 💻","Tu écris le code, donc tu écris les règles."],["Réseaux 🌐","Tu sais connecter les gens. Et les cœurs ?"],["Sécurité 🔐","Alors tu sais garder un secret 😏"],["Surtout le diplôme 🎓","Franche. Respect."]] },
+  place: { ch:"La salle", q:"Ta place en salle ?", label:"Place en salle", opts:[
     ["Premier rang","Studieuse… ou tu veux tout voir ?"],["Au milieu","Prudente. Discrète."],["Tout au fond","Je te repère déjà 😏"],["Près de la porte","Toujours prête à t'échapper."]] },
-  pause: { ch:"L'amphi", q:"À la pause, tu fais quoi ?", label:"Pause", opts:[
+  pause: { ch:"La salle", q:"À la pause, tu fais quoi ?", label:"Pause", opts:[
     ["Je mange","Bon appétit. Je te garde une place."],["Je reste sur mon téléphone","Et si c'était moi à l'écran ?"],["Je discute avec mes amies","Elles doivent savoir des secrets."],["Je m'isole","Mystérieuse."]] },
   shoes: { ch:"Ton style", q:"Ton style de chaussures ?", label:"Chaussures", opts:[
     ["Talons 👠","Hmm… toi, je te vois plutôt en baskets 😏"],["Baskets Nike 👟","Je savais. Rien ne te va mieux."],["Ça dépend de qui m'accompagne","Réponse dangereuse. J'aime."]] },
@@ -154,7 +154,7 @@ var Q_CHOICE = {
 };
 /* Cartes Vérité / Défi selon le niveau */
 var CARDS = {
-  doux: { v:["Ton plus beau souvenir à HEC ?","Ce qui te fait sourire en ce moment ?"], d:["Envoie-moi un emoji qui te décrit.","Dis-moi ta chanson du moment."] },
+  doux: { v:["Ton plus beau souvenir à l'ENASTIC ?","Ce qui te fait sourire en ce moment ?"], d:["Envoie-moi un emoji qui te décrit.","Dis-moi ta chanson du moment."] },
   coquin: { v:["Ce qui te fait fondre chez un garçon ?","Ton plus grand point faible face à un beau sourire ?"], d:["Écris une phrase qui me fait sourire toute la journée.","Dis-moi ce que tu ferais si je t'ignorais 😏"] },
   piquant: { v:["Quel regard est ton arme la plus dangereuse ?","Dans quelle ambiance tu fonds complètement ?"], d:["Décris en trois mots le genre de soirée qui te fait craquer.","Écris-moi un mot qui commence par T comme Tentation."] }
 };
@@ -162,7 +162,7 @@ var CARDS = {
 function buildSteps(){
   var s = [];
   ["filiere","place"].forEach(function(k){ s.push({t:"choice", k:k}); });
-  s.push({t:"text", ch:"L'amphi", q:"Ton rêve après HEC ?", label:"Rêve", ph:"Dis-moi en un mot ou deux…"});
+  s.push({t:"text", ch:"La salle", q:"Ton rêve après l'ENASTIC ?", label:"Rêve", ph:"Dis-moi en un mot ou deux…"});
   ["pause","shoes","craque","enerve"].forEach(function(k){ s.push({t:"choice", k:k}); });
   s.push({t:"text", ch:"Ton style", q:"Une chose que personne ne sait sur toi ?", label:"Secret", ph:"Je garde ça pour moi 😌"});
   s.push({t:"choice", k:"matin"});
